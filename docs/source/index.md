@@ -60,6 +60,22 @@ where `<option>` can be one of:
 You can install multiple bundles of optional dependencies separating them with commas.
 Thus, to install all user facing optional dependencies you should use `arviz-base[netcdf,zarr]`
 
+## Using ArviZ with CmdStanPy
+
+ArviZ can directly convert CmdStanPy sampling results into the ArviZ data structure
+using the `from_cmdstanpy` converter.
+
+```python
+import arviz as az
+from cmdstanpy import CmdStanModel
+
+model = CmdStanModel(stan_file="bernoulli.stan")
+fit = model.sample({"N": 10, "y": [0, 1, 0, 0, 0, 0, 0, 0, 0, 1]})
+
+idata = az.from_cmdstanpy(posterior=fit)
+az.plot_trace_dist(idata)
+
+
 :::{toctree}
 :caption: Tutorials
 :hidden:
@@ -70,6 +86,9 @@ how_to/ConversionGuideEmcee
 how_to/ConversionGuideNumPyro
 ArviZ in Context <https://arviz-devs.github.io/EABM/>
 :::
+
+how_to/ConversionGuideCmdStanPy
+
 
 :::{toctree}
 :caption: Reference
