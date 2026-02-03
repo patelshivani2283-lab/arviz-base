@@ -74,7 +74,7 @@ fit = model.sample({"N": 10, "y": [0, 1, 0, 0, 0, 0, 0, 0, 0, 1]})
 
 idata = az.from_cmdstanpy(posterior=fit)
 az.plot_trace_dist(idata)
-
+```
 
 :::{toctree}
 :caption: Tutorials
@@ -84,10 +84,11 @@ tutorial/WorkingWithDataTree
 tutorial/label_guide
 how_to/ConversionGuideEmcee
 how_to/ConversionGuideNumPyro
+how_to/ConversionGuideCmdStanPy
 ArviZ in Context <https://arviz-devs.github.io/EABM/>
 :::
 
-how_to/ConversionGuideCmdStanPy
+
 
 
 :::{toctree}
