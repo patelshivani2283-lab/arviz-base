@@ -66,7 +66,7 @@ ArviZ can directly convert CmdStanPy sampling results into the ArviZ data struct
 using the `from_cmdstanpy` converter.
 
 ```python
-import arviz as az
+import arviz-base as az
 from cmdstanpy import CmdStanModel
 
 model = CmdStanModel(stan_file="bernoulli.stan")
