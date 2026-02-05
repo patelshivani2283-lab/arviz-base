@@ -1,3 +1,4 @@
+
 # pylint: disable=redefined-builtin,invalid-name
 """Sphinx configuration file."""
 
