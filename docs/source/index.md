@@ -53,8 +53,6 @@ where `<option>` can be one of:
 * `netcdf`
 * `h5netcdf`
 * `zarr`
-* `test` (for developers)
-* `doc` (for developers)
 
 You can install multiple bundles of optional dependencies separating them with commas.
 Thus, to install all user facing optional dependencies you should use `arviz-base[netcdf,zarr]`
