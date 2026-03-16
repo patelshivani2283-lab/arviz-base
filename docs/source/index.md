@@ -62,6 +62,7 @@ Thus, to install all user facing optional dependencies you should use `arviz-bas
 :hidden:
 
 tutorial/label_guide
+tutorial/WorkingWithDataTree
 how_to/ConversionGuideCmdStanPy
 how_to/ConversionGuideEmcee
 how_to/ConversionGuideNumPyro
