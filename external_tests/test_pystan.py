@@ -1,5 +1,4 @@
 # pylint: disable=no-member, invalid-name, redefined-outer-name, too-many-function-args
-import importlib
 
 import numpy as np
 import pytest
@@ -9,22 +8,19 @@ from arviz_base.io_pystan import get_draws
 from arviz_base.testing import check_multiple_attrs
 
 from .helpers import (  # pylint: disable=unused-import
+    importorskip,
+    # pystan_version,
     # chains,
     # check_multiple_attrs,
     # draws,
     # eight_schools_params,
     load_cached_models,
-    # pystan_version,
 )
 
 # Check if either pystan or pystan3 is installed
-pystan_installed = importlib.util.find_spec("stan") is not None
+pystan = importorskip("stan")
 
 
-@pytest.mark.skipif(
-    True,
-    reason="Temporarily disable pytest tests.",
-)
 class TestDataPyStan:
     @pytest.fixture(scope="class")
     def data(self, eight_schools_params, draws, chains):

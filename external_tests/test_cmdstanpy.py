@@ -20,6 +20,8 @@ from arviz_base.testing import check_multiple_attrs
 
 from .helpers import importorskip  # pylint: disable=unused-import
 
+cmdstanpy = importorskip("cmdstanpy")
+
 
 def _create_test_data(target_dir):
     """Create test data to local folder.
@@ -28,8 +30,6 @@ def _create_test_data(target_dir):
     """
     import platform
     import shutil
-
-    import cmdstanpy
 
     model_code = """
         data {
